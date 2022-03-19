@@ -1,0 +1,89 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   background-color: black;
+   color: white;
+}
+
+.box {
+   min-width: 300px;
+   min-height: 240px;
+   flex-direction: column;
+
+}
+
+.snow{
+   display: grid;
+   place-items: center;
+   position: absolute;
+   background-image: url(1.png), url(2.png), url(3.png);
+   animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+   0% {
+      background-position: 0 0, 0 0, 0 0;
+   }   
+   0% {
+      background-position: 500px 1000px, 400px 400px, 300px 300px;
+   }   
+}
+
+.wrapper {
+   overflow: hidden ;
+   width: 100%;
+}
+
+#semi_circle {
+   position: absolute;
+   height: 100px;
+   width: 100px;
+   background: radial-gradient(white, #15317E);
+   background:transparent;
+   broder-raduis:5% 3% 3% 6% / 4% 2% 8% 5%;
+   box-shadow:inset 40px 40px 40px rgba(0,0,0,0.05), 35px 35px 35px rgba(0,0,0,0.1),
+   50px 50px 59px rgba(0,0,0,0.05),inset -30px -30px 20px rgba(255,255,255,0.9);
+   
+   border-radius: 50%;
+   transform: translate(100px, -50px);
+   z-index: 2;
+   
+}
+
+img {
+   position: absolute;
+   height: 200px;
+   width: 200px;
+   transform-origin:top center;
+   animation: swing 3s ease infinite;
+   z-index: 1;
+}
+
+.end {
+   display: none;
+}
+
+@keyframes swing {
+   0% {
+       transform: rotate(60deg);
+   }
+   50% {
+       transform: translate(70px, 20px) rotate(-60deg);
+   }
+  /* 75% {
+       transform: translate(10px, 20px) rotate(0deg);
+   } */
+   100% {
+       transform: rotate(60deg);
+   }
+   
+}
